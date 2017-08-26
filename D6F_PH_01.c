@@ -10,7 +10,7 @@
   */
 /* Includes ------------------------------------------------------------------*/
 #include "stm32l0xx_hal.h"
-#include "DF6_PH_01.h"
+#include "D6F_PH_01.h"
 #define I2C1_SCL_PIN GPIO_Pin_6
 #define I2C1_SDA_PIN GPIO_Pin_7
 #define I2C2_SCL_PIN GPIO_Pin_10
