@@ -141,11 +141,11 @@ while( HAL_I2C_IsDeviceReady(&hi2cxp,add,5,100));
  adc_wait(5); /* 5msec wait */
   while( HAL_I2C_IsDeviceReady(&hi2cxp,add,5,100));
 
- HAL_I2C_Master_Transmit(&hi2cxp,add,(uint8_t  *)&dbuf[n-1],1, 100); /* Send Data */
- add=0xD9;
- while( HAL_I2C_IsDeviceReady(&hi2cxp,add,5,100));
-
- HAL_I2C_Master_Receive(&hi2cxp,add, rd_fifo,2,100);
+  //HAL_I2C_Master_Transmit(&hi2cxp,add,(uint8_t  *)&dbuf[n-1],1, 200); /* Send Data */
+ //add=0xD9;
+ //HAL_I2C_Master_Receive(&hi2cxp,add, rd_fifo,2,100);
+  HAL_I2C_Mem_Read( &hi2cxp, add, dbuf[n-1],1,  rd_fifo, 2,300 );
+																	300 );
  
  RD_FIFO = ((rd_fifo[0] << 8) | rd_fifo[1]);
  return RD_FIFO;
